@@ -2,15 +2,27 @@ name: Run Tests
 
 on: push
 jobs:
-  run-tests:
+  setup:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python
         uses: actions/setup-python@v4
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt;
+  test:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
       - name: Run Tests
         run: pytest
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Digital Ocean
+        run: scp -r $GITHUB_WORKSPACE root@159.223.30.198:/home/
+     
+       
