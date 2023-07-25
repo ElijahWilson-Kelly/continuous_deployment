@@ -20,6 +20,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Deploy to Digital Ocean
-        run: scp -r $GITHUB_WORKSPACE root@159.223.30.198:/home/
+        run: ssh @159.223.30.198
      
        
