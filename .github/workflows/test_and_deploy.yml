@@ -19,7 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Deploy to Digital Ocean
-        run: ssh root@159.223.30.198
+      - uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: 159.223.30.198
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: whoami
      
        
