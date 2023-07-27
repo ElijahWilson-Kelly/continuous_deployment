@@ -22,6 +22,7 @@ jobs:
       - uses: appleboy/ssh-action@v1.0.0
         with:
           host: 159.223.30.198
+          username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: whoami
      
