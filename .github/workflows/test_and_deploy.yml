@@ -25,7 +25,7 @@ jobs:
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/continues_deployment
+            cd /home/continuous_deployment
             git pull git@github.com:ElijahWilson-Kelly/continuous_deployment.git
      
        
