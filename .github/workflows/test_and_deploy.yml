@@ -27,5 +27,6 @@ jobs:
           script: |
             cd /home/continuous_deployment
             git pull git@github.com:ElijahWilson-Kelly/continuous_deployment.git
+            systemctl restart continuous_deployment
      
        
