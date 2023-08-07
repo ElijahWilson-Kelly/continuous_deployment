@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Welcome {{ username }}!</h2>
+<h2>Welcome{% if username %} {{username }}{% endif %}!</h2>
 
 {% for blog_post in blog_posts %}
 <div class="blog-post">
