@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Welcome {{ username }}!</h2>
+
+{% for blog_post in blog_posts %}
+<div class="blog-post">
+    <div class="post-body">
+        <h4>{{ blog_post["title"] }}</h4>
+        <p>{{ blog_post["post"] }}</p>
+    </div>
+    <div class="post-footer">
+        <p>posted by {{ blog_post["author"] }} </p>
+        <p>{{ blog_post["created_at"] }}</p>
+    </div>
+
+</div>
+{% endfor %}
+
+{% if username %}
+<div class="new-post blog-post">
+    <form method="post">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" required>
+        <label for="post">Post</label>
+        <textarea name="post" id="post" required></textarea>
+        <button type="submit">Add Post</button>
+    </form>
+</div>
+
+{% else %}
+<h2>You must log in to add a blog post</h2>
+{% endif %}
+{% endblock %}

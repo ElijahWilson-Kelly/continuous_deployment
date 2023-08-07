@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Continous Depoloyment</title>
+    <link rel="stylesheet" href="../static/styles.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Winc Message Board!</h1>
+        <p>Place your message on the message board!</p>
+    </header>
+    <nav>
+        <a href="/login">Change User</a>
+        <a href="/dashboard">Message Board</a>
+    </nav>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <div id="footer">
+        {% block footer %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>
