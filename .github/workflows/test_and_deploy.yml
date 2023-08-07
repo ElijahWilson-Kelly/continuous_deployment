@@ -26,5 +26,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/continuous_deployment
-            git pull git@github.com:ElijahWilson-Kelly/continuous_deployment.git
+            git pull
             systemctl restart continuous_deployment
